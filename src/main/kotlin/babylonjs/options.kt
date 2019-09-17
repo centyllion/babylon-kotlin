@@ -58,7 +58,7 @@ class DiscOptions(
     var updatable: Boolean? = null,
     var sideOrientation: Number? = null,
     var frontUVs: Vector4? = null,
-    var backUVs: Vector4?
+    var backUVs: Vector4? = null
 )
 
 class IcoSphereOptions(
@@ -71,7 +71,7 @@ class IcoSphereOptions(
     var sideOrientation: Number? = null,
     var frontUVs: Vector4? = null,
     var backUVs: Vector4? = null,
-    var updatable: Boolean?
+    var updatable: Boolean? = null
 )
 
 class RibbonOptions(
@@ -86,7 +86,7 @@ class RibbonOptions(
     var instance: Mesh? = null,
     var invertUV: Boolean? = null,
     var uvs: Array<Vector2>? = null,
-    var colors: Array<Color4>?
+    var colors: Array<Color4>? = null
 )
 
 class CylinderOptions(
@@ -114,7 +114,7 @@ class TorusOptions(
     var updatable: Boolean? = null,
     var sideOrientation: Number? = null,
     var frontUVs: Vector4? = null,
-    var backUVs: Vector4?
+    var backUVs: Vector4? = null
 )
 
 class TorusKnotOptions(
@@ -127,7 +127,7 @@ class TorusKnotOptions(
     var updatable: Boolean? = null,
     var sideOrientation: Number? = null,
     var frontUVs: Vector4? = null,
-    var backUVs: Vector4?
+    var backUVs: Vector4? = null
 )
 
 class LineSystemOptions(
@@ -135,7 +135,7 @@ class LineSystemOptions(
     var updatable: Boolean? = null,
     var instance: LinesMesh? = null,
     var colors: Array<Array<Color4>>? = null,
-    var useVertexAlpha: Boolean?
+    var useVertexAlpha: Boolean? = null
 )
 
 class LinesOptions(
@@ -143,7 +143,7 @@ class LinesOptions(
     var updatable: Boolean? = null,
     var instance: LinesMesh? = null,
     var colors: Array<Color4>? = null,
-    var useVertexAlpha: Boolean?
+    var useVertexAlpha: Boolean? = null
 )
 
 class DashedLinesOptions(
@@ -152,7 +152,7 @@ class DashedLinesOptions(
     var gapSize: Number? = null,
     var dashNb: Number? = null,
     var updatable: Boolean? = null,
-    var instance: LinesMesh?
+    var instance: LinesMesh? = null
 )
 
 class ExtrudeOptions(
@@ -166,7 +166,7 @@ class ExtrudeOptions(
     var frontUVs: Vector4? = null,
     var backUVs: Vector4? = null,
     var instance: Mesh? = null,
-    var invertUV: Boolean?
+    var invertUV: Boolean? = null
 )
 
 class ExtrudeCustomOptions(
@@ -182,7 +182,7 @@ class ExtrudeCustomOptions(
     var frontUVs: Vector4? = null,
     var backUVs: Vector4? = null,
     var instance: Mesh? = null,
-    var invertUV: Boolean?
+    var invertUV: Boolean? = null
 )
 
 class LatheOptions(
@@ -197,7 +197,7 @@ class LatheOptions(
     var frontUVs: Vector4? = null,
     var backUVs: Vector4? = null,
     var cap: Number? = null,
-    var invertUV: Boolean?
+    var invertUV: Boolean? = null
 )
 
 class PlaneOptions(
@@ -217,7 +217,7 @@ class GroundOptions(
     var subdivisions: Number? = null,
     var subdivisionsX: Number? = null,
     var subdivisionsY: Number? = null,
-    var updatable: Boolean?
+    var updatable: Boolean? = null
 )
 
 class SizeOptions(var w: Number, var h: Number)
@@ -229,7 +229,7 @@ class TiledGroundOptions(
     var zmax: Number,
     var subdivisions: SizeOptions? = null,
     var precision: SizeOptions? = null,
-    var updatable: Boolean?
+    var updatable: Boolean? = null
 )
 
 class GroundMapOptions(
@@ -241,7 +241,7 @@ class GroundMapOptions(
     var colorFilter: Color3? = null,
     var alphaFilter: Number? = null,
     var updatable: Boolean? = null,
-    var onReady: ((mesh: GroundMesh)-> Unit)?
+    var onReady: ((mesh: GroundMesh)-> Unit)? = null
 )
 
 class PolygonOptions(
@@ -253,7 +253,7 @@ class PolygonOptions(
     var updatable: Boolean? = null,
     var sideOrientation: Number? = null,
     var frontUVs: Vector4? = null,
-    var backUVs: Vector4?
+    var backUVs: Vector4? = null
 )
 
 class TubeOptions(
@@ -268,7 +268,7 @@ class TubeOptions(
     var frontUVs: Vector4? = null,
     var backUVs: Vector4? = null,
     var instance: Mesh? = null,
-    var invertUV: Boolean?
+    var invertUV: Boolean? = null
 )
 
 class PolyhedronOptions(
@@ -284,14 +284,14 @@ class PolyhedronOptions(
     var updatable: Boolean? = null,
     var sideOrientation: Number? = null,
     var frontUVs: Vector4? = null,
-    var backUVs: Vector4?
+    var backUVs: Vector4? = null
 )
 
 class DecalOptions(
     var position: Vector3? = null,
     var normal: Vector3? = null,
     var size: Vector3? = null,
-    var angle: Number?
+    var angle: Number? = null
 )
 
 class TextureOptions(
