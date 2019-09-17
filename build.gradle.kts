@@ -50,7 +50,7 @@ val repo = "centyllion/babylon-kotlin"
 val pomUrl = "https://github.com/$repo"
 val pomScmUrl = "https://github.com/$repo"
 val pomIssueUrl = "$pomUrl/issues"
-val pomDesc = "Set of definitions Kotlin for babylon.js"
+val pomDesc = "Set of Kotlin definitions for babylon.js"
 
 val pomScmConnection = "scm:git:git://github.com/$repo"
 val pomScmDevConnection = pomScmConnection
