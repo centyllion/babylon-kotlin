@@ -312,7 +312,7 @@ open external class TransformNode: Node {
      * Gets or sets a Boolean indicating that non uniform scaling (when at least one component is different from others) should be ignored.
      * By default the system will update normals to compensate
      */
-    val ignoreNonUniformScaling: Boolean 
+    var ignoreNonUniformScaling: Boolean
     /**
      * Gets or sets a Boolean indicating that even if rotationQuaternion is defined, you can keep updating rotation property and Babylon.js will just mix both
      */
