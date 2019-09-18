@@ -7,7 +7,8 @@ external class SmartArray<T>
 
 external class CameraInputsManager<T>
 
-external class RenderTargetTexture
+external class RenderTargetCreationOptions
+
 external class CubeTexture: BaseTexture
 external class HDRCubeTexture: BaseTexture
 external class EquiRectangularCubeTexture: BaseTexture
@@ -42,8 +43,6 @@ external interface IPipelineContext
 external interface ILoadingScreen
 external interface IAudioEngine
 external interface IOfflineProvider
-
-external interface IShadowGenerator
 
 external class VertexBuffer
 external class UniformBuffer
