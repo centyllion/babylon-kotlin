@@ -14,8 +14,6 @@ external class HDRCubeTexture: BaseTexture
 external class EquiRectangularCubeTexture: BaseTexture
 
 external class InstancingAttributeInfo
-external class PostProcess
-external class PostProcessManager
 external class Effect
 external class EffectFallbacks
 external class FreeCamera
