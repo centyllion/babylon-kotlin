@@ -10,6 +10,7 @@ This project is temporary since the (Dukat project)[https://github.com/Kotlin/du
 ## 0.1.2
 
 - Adds GridMaterial
+- Adds PostProcess and DefaultRenderingPipeline
 
 ## 0.1.1
 
