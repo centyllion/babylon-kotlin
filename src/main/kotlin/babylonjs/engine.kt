@@ -1,5 +1,5 @@
-@file:JsQualifier("BABYLON")
 @file:Suppress("unused", "ConvertSecondaryConstructorToPrimary", "CovariantEquals")
+@file:JsModule("babylonjs")
 package babylonjs
 
 import org.khronos.webgl.ArrayBuffer

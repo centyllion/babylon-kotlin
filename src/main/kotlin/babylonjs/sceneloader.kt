@@ -1,5 +1,5 @@
-@file:JsQualifier("BABYLON")
 @file:Suppress("unused", "ConvertSecondaryConstructorToPrimary", "CovariantEquals", "FunctionName")
+@file:JsModule("babylonjs")
 package babylonjs
 
 import org.w3c.files.File
@@ -300,7 +300,7 @@ external class SceneLoader {
          * @param pluginExtension the extension used to determine the plugin
          * @returns The loaded plugin
          */
-        fun Load(rootUrl: String, sceneFilename: String?, engine:Engine?, onSuccess: ((scene: Scene) -> Unit)?, onProgress: ((event: SceneLoaderProgressEvent) -> Unit)?, onError: ((scene: Scene, message: String, exception: Any?) -> Unit)?, pluginExtension: String?): ISceneLoaderPlugin? // | ISceneLoaderPluginAsync
+        fun Load(rootUrl: String, sceneFilename: String?, engine: Engine?, onSuccess: ((scene: Scene) -> Unit)?, onProgress: ((event: SceneLoaderProgressEvent) -> Unit)?, onError: ((scene: Scene, message: String, exception: Any?) -> Unit)?, pluginExtension: String?): ISceneLoaderPlugin? // | ISceneLoaderPluginAsync
         /**
          * Load a scene
          * @param rootUrl a String that defines the root url for the scene and resources or the concatenation of rootURL and filename (e.g. [http://example.com/test.glb)]

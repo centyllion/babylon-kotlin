@@ -1,5 +1,5 @@
-@file:JsQualifier("BABYLON")
 @file:Suppress("unused", "ConvertSecondaryConstructorToPrimary", "CovariantEquals", "FunctionName")
+@file:JsModule("babylonjs")
 package babylonjs
 
 import kotlin.js.Promise

@@ -7,6 +7,10 @@ This project is temporary since the (Dukat project)[https://github.com/Kotlin/du
 
 # Change logs
 
+## 0.2
+
+- Adds @JsModule imports
+
 ## 0.1.2
 
 - Adds GridMaterial

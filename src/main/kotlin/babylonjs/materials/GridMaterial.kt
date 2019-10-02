@@ -1,6 +1,6 @@
-@file:JsQualifier("BABYLON")
 @file:Suppress("unused", "ConvertSecondaryConstructorToPrimary", "CovariantEquals", "FunctionName", "PropertyName")
-package babylonjs.extension
+@file:JsModule("babylonjs-materials")
+package babylonjs.materials
 
 import babylonjs.AbstractMesh
 import babylonjs.Color3
