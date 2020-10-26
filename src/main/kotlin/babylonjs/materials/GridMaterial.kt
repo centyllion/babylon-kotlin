@@ -1,5 +1,6 @@
 @file:Suppress("unused", "ConvertSecondaryConstructorToPrimary", "CovariantEquals", "FunctionName", "PropertyName")
 @file:JsModule("babylonjs-materials")
+@file:JsNonModule
 package babylonjs.materials
 
 import babylonjs.AbstractMesh

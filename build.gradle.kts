@@ -1,13 +1,14 @@
-import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
 import java.util.Date
 
-val kotlinx_html_version: String by project
+val kotlinx_html_version: String = "0.7.2"
+
+val currentVersion = versioning.info.base.let { if (it.isEmpty()) "dev" else it }
 
 group = "com.centyllion"
-version = versioning.info.base
+version = currentVersion
 
 plugins {
-    id("kotlin2js") version "1.3.50"
+    kotlin("js") version "1.4.10"
     id("fr.coppernic.versioning") version "3.1.2"
     id("com.jfrog.bintray") version "1.8.4"
     id("maven-publish")
@@ -21,15 +22,21 @@ repositories {
     jcenter()
 }
 
-tasks.withType<Kotlin2JsCompile> {
-    kotlinOptions.moduleKind = "amd"
-}
-
 dependencies {
-    implementation(kotlin("stdlib-js"))
     implementation("org.jetbrains.kotlinx:kotlinx-html-js:$kotlinx_html_version")
 
+    implementation(npm("babylonjs", "4.0.3", generateExternals = false))
+    implementation(npm("babylonjs-loaders", "4.0.3", generateExternals = false))
+    implementation(npm("babylonjs-materials", "4.0.3", generateExternals = false))
+
     testImplementation(kotlin("test-js"))
+}
+
+kotlin {
+    js {
+        browser {
+        }
+    }
 }
 
 tasks {
@@ -38,10 +45,12 @@ tasks {
     }
 }
 
+/*
 val sourcesJar by tasks.creating(Jar::class) {
     archiveClassifier.set("sources")
     from(sourceSets.getByName("main").allSource)
 }
+*/
 
 val artifactName = "babylon-kotlin"
 val artifactGroup = "com.centyllion"
@@ -70,9 +79,9 @@ publishing {
         create<MavenPublication>("lib") {
             groupId = artifactGroup
             artifactId = artifactName
-            version = project.versioning.info.base
-            from(components["java"])
-            artifact(sourcesJar)
+            version = currentVersion
+            //from(components["java"])
+            //artifact(sourcesJar)
 
             pom.withXml {
                 asNode().apply {
@@ -119,7 +128,7 @@ bintray {
         githubReleaseNotesFile = githubReadme
 
         version.apply {
-            name = project.versioning.info.base
+            name = currentVersion
             desc = pomDesc
             released = Date().toString()
             vcsTag = project.versioning.info.tag

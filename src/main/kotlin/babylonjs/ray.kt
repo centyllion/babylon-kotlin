@@ -1,5 +1,6 @@
 @file:Suppress("unused", "ConvertSecondaryConstructorToPrimary", "CovariantEquals", "FunctionName")
 @file:JsModule("babylonjs")
+@file:JsNonModule
 package babylonjs
 
 /**

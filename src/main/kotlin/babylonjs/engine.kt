@@ -28,42 +28,60 @@ external interface EngineOptions: WebGLContextAttributes {
      * @see [https://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio]
      */
     var limitDeviceRatio: Number?
+        get() = definedExternally
+        set(value) = definedExternally
     /**
      * Defines if webvr should be enabled automatically
      * @see [http://doc.babylonjs.com/how_to/webvr_camera]
      */
     var autoEnableWebVR: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
     /**
      * Defines if webgl2 should be turned off even if supported
      * @see [http://doc.babylonjs.com/features/webgl2]
      */
     var disableWebGL2Support: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
     /**
      * Defines if webaudio should be initialized as well
      * @see [http://doc.babylonjs.com/how_to/playing_sounds_and_music]
      */
     var audioEngine: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
     /**
      * Defines if animations should run using a deterministic lock step
      * @see [http://doc.babylonjs.com/babylon101/animations#deterministic-lockstep]
      */
     var deterministicLockstep: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
     /** Defines the maximum steps to use with deterministic lock step mode */
     var lockstepMaxSteps: Number?
+        get() = definedExternally
+        set(value) = definedExternally
     /**
      * Defines that engine should ignore context lost events
      * If this event happens when this parameter is true, you will have to reload the page to restore rendering
      */
     var doNotHandleContextLost: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
     /**
      * Defines that engine should ignore modifying touch action attribute and style
      * If not handle, you might need to set it up on your side for expected touch devices behavior.
      */
     var doNotHandleTouchAction: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
     /**
      * Defines that engine should compile shaders with high precision floats (if supported). True by default
      */
     var useHighPrecisionFloats: Boolean?
+        get() = definedExternally
+        set(value) = definedExternally
 }
 
 /**

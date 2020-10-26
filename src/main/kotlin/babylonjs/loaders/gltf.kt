@@ -1,4 +1,5 @@
 @file:JsModule("babylonjs-loaders")
+@file:JsNonModule
 package babylonjs.loaders
 
 import babylonjs.AssetContainer

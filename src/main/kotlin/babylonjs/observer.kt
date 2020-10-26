@@ -1,5 +1,6 @@
 @file:Suppress("unused", "ConvertSecondaryConstructorToPrimary", "CovariantEquals")
 @file:JsModule("babylonjs")
+@file:JsNonModule
 package babylonjs
 
 import kotlin.js.Promise
