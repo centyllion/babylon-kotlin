@@ -8,7 +8,7 @@ group = "com.centyllion"
 version = currentVersion
 
 plugins {
-    kotlin("js") version "1.4.10"
+    kotlin("js") version "1.4.21"
     id("fr.coppernic.versioning") version "3.1.2"
     id("com.jfrog.bintray") version "1.8.4"
     id("maven-publish")
