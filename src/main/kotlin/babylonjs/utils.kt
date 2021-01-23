@@ -1,24 +1,6 @@
 @file:Suppress("unused")
 package babylonjs
 
-// TODO some clever type definition are Any fornow
-/**
- * Alias type for number that are floats
- * @ignorenaming
- */
-typealias Float = Number
-/**
- * Alias type for number that are doubles.
- * @ignorenaming
- */
-typealias Double = Number
-/**
- * Alias type for number that are integer
- * @ignorenaming
- */
-typealias Int = Number
-/** Alias type for number array or Float32Array */
-typealias FloatArray = Array<Number> /*| Float32Array*/
 /** Alias type for number array or Float32Array or Int32Array or Uint32Array or Uint16Array */
 typealias IndicesArray = Array<Number> /*| Int32Array | Uint32Array | Uint16Array*/
 /**
