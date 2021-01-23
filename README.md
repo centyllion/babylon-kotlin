@@ -7,6 +7,14 @@ This project is temporary since the (Dukat project)[https://github.com/Kotlin/du
 
 # Change logs
 
+## 0.4.1
+
+- Removes conflicting types.
+
+## 0.4
+
+- Version problem ... 
+
 ## 0.2
 
 - Adds @JsModule imports
