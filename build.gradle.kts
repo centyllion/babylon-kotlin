@@ -4,22 +4,21 @@ val kotlinx_html_version: String = "0.7.2"
 
 val currentVersion = versioning.info.base.let { if (it.isEmpty()) "dev" else it }
 
+val grpUser: String by project
+val grpToken: String by project
+
 group = "com.centyllion"
 version = currentVersion
 
 plugins {
-    kotlin("js") version "1.4.21"
+    kotlin("js") version "1.5.21"
     id("fr.coppernic.versioning") version "3.1.2"
-    id("com.jfrog.bintray") version "1.8.4"
     id("maven-publish")
 }
 
-apply {
-    plugin("com.jfrog.bintray")
-}
-
 repositories {
-    jcenter()
+    mavenCentral()
+    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/kotlinx-html/maven") }
 }
 
 dependencies {
@@ -33,14 +32,13 @@ dependencies {
 }
 
 kotlin {
-    js {
+    js(IR) {
         browser { }
     }
 }
 
 tasks {
     publishToMavenLocal { dependsOn(build) }
-    bintrayUpload { dependsOn(publishToMavenLocal) }
 }
 
 /*
@@ -102,41 +100,17 @@ fun PublicationContainer.createPublication(name: String) {
 }
 
 publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/centyllion/bulma-kotlin")
+            credentials {
+                username = grpUser
+                password = grpToken
+            }
+        }
+    }
     publications {
         components.forEach { createPublication(it.name) }
-    }
-}
-
-bintray {
-    user = System.getenv("BINTRAY_USER") ?: System.getProperty("bintray.user")
-    key = System.getenv("BINTRAY_KEY") ?: System.getProperty("bintray.key")
-    publish = true
-    override = true
-
-    setPublications(
-        *publishing.publications
-                .map { it.name }
-                .filter { it != "kotlinMultiplatform"
-                }.toTypedArray()
-    )
-
-    pkg.apply {
-        repo = "Libraries"
-        userOrg = "centyllion"
-        name = rootProject.name
-        setLicenses("Apache-2.0")
-        setLabels("Kotlin", "JS", "Babylon.js")
-        vcsUrl = pomScmUrl
-        websiteUrl = pomUrl
-        issueTrackerUrl = pomIssueUrl
-        githubRepo = repo
-        githubReleaseNotesFile = githubReadme
-
-        version.apply {
-            name = currentVersion
-            desc = pomDesc
-            released = Date().toString()
-            vcsTag = project.versioning.info.tag
-        }
     }
 }
