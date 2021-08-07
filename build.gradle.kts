@@ -103,7 +103,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/centyllion/bulma-kotlin")
+            url = uri("https://maven.pkg.github.com/centyllion/babylon-kotlin")
             credentials {
                 username = grpUser
                 password = grpToken
