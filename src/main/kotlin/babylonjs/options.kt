@@ -1,305 +1,316 @@
 @file:Suppress("unused")
 package babylonjs
 
-
 /** Interface defining initialization parameters for Scene class */
-class SceneOptions(
+external interface SceneOptions {
     /**
      * Defines that scene should keep up-to-date a map of geometry to enable fast look-up by uniqueId
      * It will improve performance when the number of geometries becomes important.
      */
-    var useGeometryUniqueIdsMap: Boolean? = null,
+    var useGeometryUniqueIdsMap: Boolean?
+
     /**
      * Defines that each material of the scene should keep up-to-date a map of referencing meshes for fast diposing
      * It will improve performance when the number of mesh becomes important, but might consume a bit more memory
      */
-    var useMaterialMeshMap: Boolean? = null,
+    var useMaterialMeshMap: Boolean?
+
     /**
      * Defines that each mesh of the scene should keep up-to-date a map of referencing cloned meshes for fast diposing
      * It will improve performance when the number of mesh becomes important, but might consume a bit more memory
      */
-    var useClonedMeshMap: Boolean? = null,
+    var useClonedMeshMap: Boolean?
+
     /** Defines if the creation of the scene should impact the engine (Eg. UtilityLayer's scene) */
-    var virtual: Boolean? = null
-)
+    var virtual: Boolean?
+}
 
-class BoxOptions(
-    var size: Number? = null,
-    var width: Number? = null,
-    var height: Number? = null,
-    var depth: Number? = null,
-    var faceUV: Array<Vector4>? = null,
-    var faceColors: Array<Color4>? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var updatable: Boolean? = null
-)
+class BasicSceneOptions(
+    override var useGeometryUniqueIdsMap: Boolean?,
+    override var useMaterialMeshMap: Boolean?,
+    override var useClonedMeshMap: Boolean?,
+    override var virtual: Boolean?,
+): SceneOptions
 
+external interface BoxOptions {
+    var size: Number?
+    var width: Number?
+    var height: Number?
+    var depth: Number?
+    var faceUV: Array<Vector4>?
+    var faceColors: Array<Color4>?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var updatable: Boolean?
+}
 
-class SphereOptions(
-    var segments: Number? = null,
-    var diameter: Number? = null,
-    var diameterX: Number? = null,
-    var diameterY: Number? = null,
-    var diameterZ: Number? = null,
-    var arc: Number? = null,
-    var slice: Number? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var updatable: Boolean? = null
-)
+external interface SphereOptions {
+    var segments: Number?
+    var diameter: Number?
+    var diameterX: Number?
+    var diameterY: Number?
+    var diameterZ: Number?
+    var arc: Number?
+    var slice: Number?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var updatable: Boolean?
+}
 
-class DiscOptions(
-    var radius: Number? = null,
-    var tessellation: Number? = null,
-    var arc: Number? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null
-)
+external interface DiscOptions {
+    var radius: Number?
+    var tessellation: Number?
+    var arc: Number?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+}
 
-class IcoSphereOptions(
-    var radius: Number? = null,
-    var radiusX: Number? = null,
-    var radiusY: Number? = null,
-    var radiusZ: Number? = null,
-    var flat: Boolean? = null,
-    var subdivisions: Number? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var updatable: Boolean? = null
-)
+external interface IcoSphereOptions {
+    var radius: Number?
+    var radiusX: Number?
+    var radiusY: Number?
+    var radiusZ: Number?
+    var flat: Boolean?
+    var subdivisions: Number?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var updatable: Boolean?
+}
 
-class RibbonOptions(
-    var pathArray: Array<Array<Vector3>>,
-    var closeArray: Boolean? = null,
-    var closePath: Boolean? = null,
-    var offset: Number? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var instance: Mesh? = null,
-    var invertUV: Boolean? = null,
-    var uvs: Array<Vector2>? = null,
-    var colors: Array<Color4>? = null
-)
+external interface RibbonOptions{
+    var pathArray: Array<Array<Vector3>>?
+    var closeArray: Boolean?
+    var closePath: Boolean?
+    var offset: Number?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var instance: Mesh?
+    var invertUV: Boolean?
+    var uvs: Array<Vector2>?
+    var colors: Array<Color4>?
+}
 
-class CylinderOptions(
-    var height: Number? = null,
-    var diameterTop: Number? = null,
-    var diameterBottom: Number? = null,
-    var diameter: Number? = null,
-    var tessellation: Number? = null,
-    var subdivisions: Number? = null,
-    var arc: Number? = null,
-    var faceColors: Array<Color4>? = null,
-    var faceUV: Array<Vector4>? = null,
-    var updatable: Boolean? = null,
-    var hasRings: Boolean? = null,
-    var enclose: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null
-)
+external interface CylinderOptions{
+    var height: Number?
+    var diameterTop: Number?
+    var diameterBottom: Number?
+    var diameter: Number?
+    var tessellation: Number?
+    var subdivisions: Number?
+    var arc: Number?
+    var faceColors: Array<Color4>?
+    var faceUV: Array<Vector4>?
+    var updatable: Boolean?
+    var hasRings: Boolean?
+    var enclose: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+}
 
-class TorusOptions(
-    var diameter: Number? = null,
-    var thickness: Number? = null,
-    var tessellation: Number? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null
-)
+external interface TorusOptions{
+    var diameter: Number?
+    var thickness: Number?
+    var tessellation: Number?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+}
 
-class TorusKnotOptions(
-    var radius: Number? = null,
-    var tube: Number? = null,
-    var radialSegments: Number? = null,
-    var tubularSegments: Number? = null,
-    var p: Number? = null,
-    var q: Number? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null
-)
+external interface TorusKnotOptions{
+    var radius: Number?
+    var tube: Number?
+    var radialSegments: Number?
+    var tubularSegments: Number?
+    var p: Number?
+    var q: Number?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+}
 
-class LineSystemOptions(
-    var lines: Array<Array<Vector3>>,
-    var updatable: Boolean? = null,
-    var instance: LinesMesh? = null,
-    var colors: Array<Array<Color4>>? = null,
-    var useVertexAlpha: Boolean? = null
-)
+external interface LineSystemOptions{
+    var lines: Array<Array<Vector3>>?
+    var updatable: Boolean?
+    var instance: LinesMesh?
+    var colors: Array<Array<Color4>>?
+    var useVertexAlpha: Boolean?
+}
 
-class LinesOptions(
-    var points: Array<Vector3>,
-    var updatable: Boolean? = null,
-    var instance: LinesMesh? = null,
-    var colors: Array<Color4>? = null,
-    var useVertexAlpha: Boolean? = null
-)
+external interface LinesOptions{
+    var points: Array<Vector3>?
+    var updatable: Boolean?
+    var instance: LinesMesh?
+    var colors: Array<Color4>?
+    var useVertexAlpha: Boolean?
+}
 
-class DashedLinesOptions(
-    var points: Array<Vector3>,
-    var dashSize: Number? = null,
-    var gapSize: Number? = null,
-    var dashNb: Number? = null,
-    var updatable: Boolean? = null,
-    var instance: LinesMesh? = null
-)
+external interface DashedLinesOptions{
+    var points: Array<Vector3>?
+    var dashSize: Number?
+    var gapSize: Number?
+    var dashNb: Number?
+    var updatable: Boolean?
+    var instance: LinesMesh?
+}
 
-class ExtrudeOptions(
-    var shape: Array<Vector3>,
-    var path: Array<Vector3>,
-    var scale: Number? = null,
-    var rotation: Number? = null,
-    var cap: Number? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var instance: Mesh? = null,
-    var invertUV: Boolean? = null
-)
+external interface ExtrudeOptions{
+    var shape: Array<Vector3>?
+    var path: Array<Vector3>?
+    var scale: Number?
+    var rotation: Number?
+    var cap: Number?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var instance: Mesh?
+    var invertUV: Boolean?
+}
 
-class ExtrudeCustomOptions(
-    var shape: Array<Vector3>,
-    var path: Array<Vector3>,
-    var scaleFunction: Any? = null,
-    var rotationFunction: Any? = null,
-    var ribbonCloseArray: Boolean? = null,
-    var ribbonClosePath: Boolean? = null,
-    var cap: Number? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var instance: Mesh? = null,
-    var invertUV: Boolean? = null
-)
+external interface ExtrudeCustomOptions{
+    var shape: Array<Vector3>?
+    var path: Array<Vector3>?
+    var scaleFunction: Any?
+    var rotationFunction: Any?
+    var ribbonCloseArray: Boolean?
+    var ribbonClosePath: Boolean?
+    var cap: Number?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var instance: Mesh?
+    var invertUV: Boolean?
+}
 
-class LatheOptions(
-    var shape: Array<Vector3>,
-    var radius: Number? = null,
-    var tessellation: Number? = null,
-    var clip: Number? = null,
-    var arc: Number? = null,
-    var closed: Boolean? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var cap: Number? = null,
-    var invertUV: Boolean? = null
-)
+external interface LatheOptions{
+    var shape: Array<Vector3>?
+    var radius: Number?
+    var tessellation: Number?
+    var clip: Number?
+    var arc: Number?
+    var closed: Boolean?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var cap: Number?
+    var invertUV: Boolean?
+}
 
-class PlaneOptions(
-    var size: Number? = null,
-    var width: Number? = null,
-    var height: Number? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var updatable: Boolean? = null,
-    var sourcePlane: Plane? = null
-)
+external interface PlaneOptions{
+    var size: Number?
+    var width: Number?
+    var height: Number?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var updatable: Boolean?
+    var sourcePlane: Plane?
+}
 
-class GroundOptions(
-    var width: Number? = null,
-    var height: Number? = null,
-    var subdivisions: Number? = null,
-    var subdivisionsX: Number? = null,
-    var subdivisionsY: Number? = null,
-    var updatable: Boolean? = null
-)
+external interface GroundOptions{
+    var width: Number?
+    var height: Number?
+    var subdivisions: Number?
+    var subdivisionsX: Number?
+    var subdivisionsY: Number?
+    var updatable: Boolean?
+}
 
-class SizeOptions(var w: Number, var h: Number)
+external interface SizeOptions{
+    var w: Number?
+    var h: Number?
+}
 
-class TiledGroundOptions(
-    var xmin: Number,
-    var zmin: Number,
-    var xmax: Number,
-    var zmax: Number,
-    var subdivisions: SizeOptions? = null,
-    var precision: SizeOptions? = null,
-    var updatable: Boolean? = null
-)
+external interface TiledGroundOptions{
+    var xmin: Number?
+    var zmin: Number?
+    var xmax: Number?
+    var zmax: Number?
+    var subdivisions: SizeOptions?
+    var precision: SizeOptions?
+    var updatable: Boolean?
+}
 
-class GroundMapOptions(
-    var width: Number? = null,
-    var height: Number? = null,
-    var subdivisions: Number? = null,
-    var minHeight: Number? = null,
-    var maxHeight: Number? = null,
-    var colorFilter: Color3? = null,
-    var alphaFilter: Number? = null,
-    var updatable: Boolean? = null,
-    var onReady: ((mesh: GroundMesh)-> Unit)? = null
-)
+external interface GroundMapOptions{
+    var width: Number?
+    var height: Number?
+    var subdivisions: Number?
+    var minHeight: Number?
+    var maxHeight: Number?
+    var colorFilter: Color3?
+    var alphaFilter: Number?
+    var updatable: Boolean?
+    var onReady: ((mesh: GroundMesh)-> Unit)?
+}
 
-class PolygonOptions(
-    var shape: Array<Vector3>,
-    var holes: Array<Array<Vector3>>,
-    var depth: Number? = null,
-    var faceUV: Array<Vector4>? = null,
-    var faceColors: Array<Color4>? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null
-)
+external interface PolygonOptions{
+    var shape: Array<Vector3>?
+    var holes: Array<Array<Vector3>>?
+    var depth: Number?
+    var faceUV: Array<Vector4>?
+    var faceColors: Array<Color4>?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+}
 
-class TubeOptions(
-    var path: Array<Vector3>,
-    var radius: Number? = null,
-    var tessellation: Number? = null,
-    var radiusFunction: ((i: Number, distance: Number) -> Number)? = null,
-    var cap: Number? = null,
-    var arc: Number? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null,
-    var instance: Mesh? = null,
-    var invertUV: Boolean? = null
-)
+external interface TubeOptions{
+    var path: Array<Vector3>?
+    var radius: Number?
+    var tessellation: Number?
+    var radiusFunction: ((i: Number, distance: Number) -> Number)?
+    var cap: Number?
+    var arc: Number?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+    var instance: Mesh?
+    var invertUV: Boolean?
+}
 
-class PolyhedronOptions(
-    var type: Number? = null,
-    var size: Number? = null,
-    var sizeX: Number? = null,
-    var sizeY: Number? = null,
-    var sizeZ: Number? = null,
-    var custom: Any? = null,
-    var faceUV: Array<Vector4>? = null,
-    var faceColors: Array<Color4>? = null,
-    var flat: Boolean? = null,
-    var updatable: Boolean? = null,
-    var sideOrientation: Number? = null,
-    var frontUVs: Vector4? = null,
-    var backUVs: Vector4? = null
-)
+external interface PolyhedronOptions{
+    var type: Number?
+    var size: Number?
+    var sizeX: Number?
+    var sizeY: Number?
+    var sizeZ: Number?
+    var custom: Any?
+    var faceUV: Array<Vector4>?
+    var faceColors: Array<Color4>?
+    var flat: Boolean?
+    var updatable: Boolean?
+    var sideOrientation: Number?
+    var frontUVs: Vector4?
+    var backUVs: Vector4?
+}
 
-class DecalOptions(
-    var position: Vector3? = null,
-    var normal: Vector3? = null,
-    var size: Vector3? = null,
-    var angle: Number? = null
-)
+external interface DecalOptions{
+    var position: Vector3?
+    var normal: Vector3?
+    var size: Vector3?
+    var angle: Number?
+}
 
-class TextureOptions(
-    var width: Number? = null,
-    var height: Number? = null
-)
+external interface TextureOptions{
+    var width: Number?
+    var height: Number?
+}
 
-class DragBehaviorOptions(
-    var dragAxis: Vector3? = null,
-    var dragPlaneNormal: Vector3? = null
-)
+external interface DragBehaviorOptions{
+    var dragAxis: Vector3?
+    var dragPlaneNormal: Vector3?
+}
