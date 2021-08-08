@@ -7,7 +7,7 @@ This project is temporary since the (Dukat project)[https://github.com/Kotlin/du
 
 # Change logs
 
-## 0.5.0 and 0.5.1
+## 0.5.0, 0.5.1 and 0.5.2
 
 - Updates to Kotlin 1.5.x
 - Adapts to IR compiler
